@@ -1,0 +1,14 @@
+app_root: .
+ignored_folders:
+- bin
+included_extensions:
+- .go
+build_target_path: "./src"
+build_path: /tmp
+build_flags: []
+build_delay: 200ns
+binary_name: app
+command_flags: []
+command_env: ["golint src/..."]
+enable_color: true
+log_name: "[gateway]"

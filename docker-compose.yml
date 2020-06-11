@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  app:
+    build: .
+    container_name: $APP_CONTAINER
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '$APP_PORT:$APP_PORT'
+    volumes:
+      - $APP_VOLUME
+networks:
+  default:
+    name: $NETWORK
