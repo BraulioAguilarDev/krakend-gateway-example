@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "port": 7070,
+  "cache_ttl": "5m",
+  "timeout": "5s",
+  "endpoints": [
+    {
+      "endpoint": "/activate/{token}",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/api/account/check-token/{token}",
+          "method": "GET",
+          "host": [
+            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/reset-password",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/api/account/reset-password",
+          "method": "POST",
+          "host": [
+            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/change-password",
+      "method": "POST",
+      "backend":[
+        {
+          "url_pattern": "/api/account/change-password",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
+          ]
+        }
+      ]
+    }
+  ]
+}
