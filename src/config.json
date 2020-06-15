@@ -13,7 +13,12 @@
           "method": "GET",
           "host": [
             "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
-          ]
+          ],
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details":"account_gateway"
+            }
+          }
         }
       ]
     },
@@ -26,7 +31,12 @@
           "method": "POST",
           "host": [
             "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
-          ]
+          ],
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details":"account_gateway"
+            }
+          }
         }
       ]
     },
@@ -40,7 +50,12 @@
           "method": "POST",
           "host": [
             "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
-          ]
+          ],
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details":"account_gateway"
+            }
+          }
         }
       ]
     }
