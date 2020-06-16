@@ -7,16 +7,38 @@
     {
       "endpoint": "/activate/{token}",
       "method": "GET",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/account/check-token/{token}",
           "method": "GET",
+          "encoding": "no-op",
+          "disable_host_sanitize": true,
           "host": [
             "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
           ],
           "extra_config": {
             "github.com/devopsfaith/krakend/http": {
-              "return_error_details":"account_gateway"
+              "return_error_details": "account_gateway"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/change-password",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/api/account/change-password",
+          "encoding": "json",
+          "method": "POST",
+          "host": [
+            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
+          ],
+          "extra_config": {
+            "github.com/devopsfaith/krakend/http": {
+              "return_error_details": "account_gateway"
             }
           }
         }
@@ -29,31 +51,13 @@
         {
           "url_pattern": "/api/account/reset-password",
           "method": "POST",
-          "host": [
-            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
-          ],
-          "extra_config": {
-            "github.com/devopsfaith/krakend/http": {
-              "return_error_details":"account_gateway"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "endpoint": "/change-password",
-      "method": "POST",
-      "backend":[
-        {
-          "url_pattern": "/api/account/change-password",
           "encoding": "json",
-          "method": "POST",
           "host": [
             "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
           ],
           "extra_config": {
             "github.com/devopsfaith/krakend/http": {
-              "return_error_details":"account_gateway"
+              "return_error_details": "account_gateway"
             }
           }
         }
