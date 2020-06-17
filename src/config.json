@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "port": 7070,
+  "port": 80,
   "cache_ttl": "5m",
-  "timeout": "5s",
+  "timeout": "10s",
   "endpoints": [
     {
       "endpoint": "/activate/{token}",
@@ -15,7 +15,7 @@
           "encoding": "no-op",
           "disable_host_sanitize": true,
           "host": [
-            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
+            "http://10.1.1.171"
           ],
           "extra_config": {
             "github.com/devopsfaith/krakend/http": {
@@ -34,7 +34,7 @@
           "encoding": "json",
           "method": "POST",
           "host": [
-            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
+            "http://10.1.1.171"
           ],
           "extra_config": {
             "github.com/devopsfaith/krakend/http": {
@@ -53,7 +53,7 @@
           "method": "POST",
           "encoding": "json",
           "host": [
-            "http://ec2-34-217-75-168.us-west-2.compute.amazonaws.com"
+            "http://10.1.1.171"
           ],
           "extra_config": {
             "github.com/devopsfaith/krakend/http": {
