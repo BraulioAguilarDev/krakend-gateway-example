@@ -5,17 +5,15 @@
   "timeout": "10s",
   "endpoints": [
     {
-      "endpoint": "/activate/{token}",
-      "method": "GET",
-      "output_encoding": "no-op",
+      "endpoint": "/recovery",
+      "method": "POST",
       "backend": [
         {
-          "url_pattern": "/api/account/check-token/{token}",
-          "method": "GET",
-          "encoding": "no-op",
-          "disable_host_sanitize": true,
+          "url_pattern": "/v1/recovery",
+          "encoding": "json",
+          "method": "POST",
           "host": [
-            "http://10.1.1.171"
+            "http://0.0.0.1:3000"
           ],
           "extra_config": {
             "github.com/devopsfaith/krakend/http": {
@@ -26,34 +24,15 @@
       ]
     },
     {
-      "endpoint": "/change-password",
+      "endpoint": "/reset",
       "method": "POST",
       "backend": [
         {
-          "url_pattern": "/api/account/change-password",
-          "encoding": "json",
-          "method": "POST",
-          "host": [
-            "http://10.1.1.171"
-          ],
-          "extra_config": {
-            "github.com/devopsfaith/krakend/http": {
-              "return_error_details": "account_gateway"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "endpoint": "/reset-password",
-      "method": "POST",
-      "backend": [
-        {
-          "url_pattern": "/api/account/reset-password",
+          "url_pattern": "/v1/reset",
           "method": "POST",
           "encoding": "json",
           "host": [
-            "http://10.1.1.171"
+            "http://0.0.0.1:3000"
           ],
           "extra_config": {
             "github.com/devopsfaith/krakend/http": {
