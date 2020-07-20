@@ -6,7 +6,7 @@ Micro service to redirect requests
 
 ### Activate account
 
-`GET: /activate/{token}`
+`POST: /recovery`
 
 Http Status Code:
 
@@ -18,7 +18,7 @@ Payload Errors:
 {
   "error_account_gateway": {
     "http_status_code": 400,
-    "http_body": "{\"errors\":\"Token is expired\"}"
+    "http_body": "{\"errors\":\"Email is expired\"}"
   }
 }
 ```
