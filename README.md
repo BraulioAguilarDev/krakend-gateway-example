@@ -1,4 +1,4 @@
-# Account Gateway
+# Gateway
 
 Micro service to redirect requests
 
